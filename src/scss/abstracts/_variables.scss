@@ -3,6 +3,11 @@ $font-family-primary: 'Inter', sans-serif;
 $font-size-primary: 1.4rem;
 $font-line-height-primary: 1.4rem;
 
+$font-size-h1: 2.4rem;
+$font-weight-h1: 600;
+$line-height-h1: 2.9rem;
+$letter-spacing-h1: 13.4px;
+
 /* Font Colors */
 $color-font-primary: #ffffff;
 $color-font-secondary: #15E1CE;
@@ -34,10 +39,17 @@ $color-button-secondary-background-hover: rgba(0, 0, 0, 0.25);
 $color-button-secondary-font-hover: #ffffff;
 $color-button-secondary-border-hover: rgba(255, 255, 255, 0.55);
 
+/* Other colors */
+$beta-background-color: #91F48D;
+$beta-font-color: #030303;
+
 /* Paddings and Margins */
 $padding-body-mobile: 8px;
 $padding-body-desktop: 10px;
 $component-spacing: 8px;
+
+/* General Border Radius */
+$border-radius-primary: 8px;
 
 /* Breakpoints */
 $grid-breakpoints: (

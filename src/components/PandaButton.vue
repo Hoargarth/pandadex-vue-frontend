@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'PandaLogo',
+  name: 'PandaButton',
   props: {
     href: String,
     title: String,

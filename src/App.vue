@@ -21,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  padding: $padding-body-mobile;
+  padding: 0 $padding-body-mobile;
   background-color: $color-background-main;
   font-family: $font-family-primary;
   font-size: $font-size-primary;
@@ -29,7 +29,7 @@ body {
   line-height: $font-line-height-primary;
 
   @include media-breakpoint-up(md) {
-      padding: $padding-body-desktop;
+      padding: 0 $padding-body-desktop;
   }
 }
 
@@ -40,5 +40,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   text-transform: uppercase;
+  font-size: $font-size-h1;
+  font-weight: $font-weight-h1;
+  line-height: $line-height-h1;
+  letter-spacing: $letter-spacing-h1;
 }
 </style>

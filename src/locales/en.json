@@ -1,0 +1,15 @@
+{
+    "header": {
+        "burningPanda": "Burning Panda",
+        "pandaDex": "Pandadex",
+        "beta": "Beta",
+        "walletConnect": "Connect Wallet"
+    },
+    "transactions": {
+        "price": "Price",
+        "amount": "Amount",
+        "value": "Value",
+        "time": "Time",
+        "transaction": "Tx"
+    }
+}
