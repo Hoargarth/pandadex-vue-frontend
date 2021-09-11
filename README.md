@@ -22,3 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+------------
+
+[SCSS folder structure guidline](https://sass-guidelin.es/de/#architektur)

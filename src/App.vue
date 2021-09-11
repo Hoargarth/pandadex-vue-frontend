@@ -1,32 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
+      In case you have multiple views and need to navigate to them
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div> -->
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+body {
+  margin: 0;
+  padding: $padding-body-mobile;
+  background-color: $color-background-main;
+  font-family: $font-family-primary;
+  font-size: $font-size-primary;
+  color: $color-font-primary;
+  line-height: $font-line-height-primary;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  @include media-breakpoint-up(md) {
+      padding: $padding-body-desktop;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: $color-font-headline;
+}
+
+h1 {
+  text-transform: uppercase;
 }
 </style>

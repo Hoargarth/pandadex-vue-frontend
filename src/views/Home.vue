@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <panda-button href=""
+      title=""
+      type="borderless"
+      icon="/assets/icons/emojione_fire.svg"
+    >Burning Panda</panda-button>
+    <panda-button href="" title="">Burning Panda</panda-button>
+    <panda-button href="" title="" type="secondary">GO</panda-button>
+    <panda-button href="" title="" disabled>Connect Wallet</panda-button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import PandaButton from '../components/PandaButton.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    PandaButton,
   },
 };
 </script>

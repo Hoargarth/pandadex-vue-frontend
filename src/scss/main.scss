@@ -1,0 +1,9 @@
+/*
+  Note:
+  Only add scss which is not being enerated, like variables, mixins, functions etc.
+  Or it will be included in every VUE component over and over again.
+  This file is to have only variables globally available
+*/
+
+@import 'abstracts/variables';
+@import 'abstracts/mixin-breakpoints';
