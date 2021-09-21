@@ -1,12 +1,24 @@
 <template>
   <div class="panda-chart-view">
     <panda-header />
-    <div class="panda-details">
-      <panda-coin-detail-container v-bind:coin-data="pandaData" />
-      <panda-coin-detail-container v-bind:coin-data="coinData" />
+    <div class="panda-chart-view-body">
+      <div class="panda-chart-view-body-left">
+        <div class="panda-details">
+          <panda-coin-detail-container v-bind:coin-data="pandaData" />
+          <panda-coin-detail-container v-bind:coin-data="coinData" />
+        </div>
+        <panda-chart />
+        <panda-transactions v-bind:transactions="transactions" />
+      </div>
+      <div class="panda-chart-view-body-right">
+        <panda-search />
+        <div class="panda-sidebar-actions">
+          <panda-button href="" title="">{{ $t('sidebarActions.bscScanButton') }}</panda-button>
+          <panda-button href="" title="">{{ $t('sidebarActions.buyButton') }}</panda-button>
+        </div>
+        <panda-promoted v-bind:promotions="promotions" />
+      </div>
     </div>
-    <panda-chart />
-    <panda-transactions v-bind:transactions="transactions" />
   </div>
 </template>
 
@@ -15,6 +27,9 @@ import PandaChart from '../components/PandaChart.vue';
 import PandaCoinDetailContainer from '../components/PandaCoinDetailContainer.vue';
 import PandaHeader from '../components/PandaHeader.vue';
 import PandaTransactions from '../components/PandaTransactions.vue';
+import PandaSearch from '../components/PandaSearch.vue';
+import PandaButton from '../components/PandaButton.vue';
+import PandaPromoted from '../components/PandaPromoted.vue';
 
 export default {
   name: 'ChartView',
@@ -23,6 +38,9 @@ export default {
     PandaCoinDetailContainer,
     PandaChart,
     PandaTransactions,
+    PandaSearch,
+    PandaButton,
+    PandaPromoted,
   },
   data() {
     return {
@@ -205,6 +223,23 @@ export default {
           type: 'buy',
         },
       ],
+      promotions: [
+        {
+          color: '#FF1111',
+          name: 'SPANDA',
+          link: 'pandadex.io',
+        },
+        {
+          color: 'rgba(255, 17, 17, 0.6)',
+          name: 'MIST',
+          link: 'mist.game',
+        },
+        {
+          color: '#D01214',
+          name: 'PYE',
+          link: 'creampye.com',
+        },
+      ],
     };
   },
 };
@@ -224,5 +259,30 @@ export default {
         flex-grow: 1;
       }
     }
+  }
+
+  .panda-chart-view-body {
+    display: flex;
+
+    .panda-chart-view-body-left,
+    .panda-chart-view-body-right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panda-chart-view-body-left {
+      flex-grow: 1;
+    }
+
+    .panda-chart-view-body-right {
+      width: 371px;
+      padding-left: $component-spacing;
+    }
+  }
+
+  .panda-sidebar-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $component-spacing;
   }
 </style>

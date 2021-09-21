@@ -11,5 +11,16 @@
         "value": "Value",
         "time": "Time",
         "transaction": "Tx"
+    },
+    "search": {
+        "placeholder": "Enter Token Name / Contract",
+        "searchAction": "GO"
+    },
+    "sidebarActions": {
+        "bscScanButton": "BSCscan",
+        "buyButton": "Buy"
+    },
+    "promoted": {
+        "header": "Promoted"
     }
 }

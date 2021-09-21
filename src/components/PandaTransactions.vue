@@ -12,12 +12,25 @@
           <div v-for="transaction in transactions" :key="transaction.key"
             class="panda-transaction"
             v-bind:class="transaction.type">
-            <div class="tx-price">{{ formatDollar(transaction.price) }}</div>
-            <div class="tx-amount">{{ formatNumber(transaction.amount) }}</div>
-            <div class="tx-value">{{ formatDollar(transaction.valueDollar) }}</div>
-            <div class="tx-time">{{ formatTimestamp(transaction.timestamp) }}</div>
+            <div class="tx-price">
+                <span class="tx-upper">{{ formatDollar(transaction.price) }}</span>
+                <span class="tx-lower">{{ transaction.pool }}</span>
+            </div>
+            <div class="tx-amount">
+                <span class="tx-upper">{{ formatNumber(transaction.amount) }}</span>
+                <span class="tx-lower">{{ transaction.amountCoin }}</span>
+            </div>
+            <div class="tx-value">
+                <span class="tx-upper">{{ formatDollar(transaction.valueDollar) }}</span>
+                <span class="tx-lower">{{ formatNumber(transaction.valueBnb) }} BNB</span>
+            </div>
+            <div class="tx-time">
+                <span class="tx-upper">{{ formatTimestamp(transaction.timestamp) }}</span>
+            </div>
             <div class="tx-spacer"></div>
-            <div class="tx-transaction">{{ transaction.transaction.slice(0,6) }}</div>
+            <div class="tx-transaction">
+                <span class="tx-upper">{{ transaction.transaction.slice(0,6) }}</span>
+            </div>
           </div>
       </div>
   </div>
@@ -52,8 +65,8 @@ export default {
     .panda-transactions-container {
         border-radius: $border-radius-primary;
         background-color: $color-background-secondary;
-        height: 577px;
         margin-top: $component-spacing;
+        padding-bottom: 32px;
     }
 
     .panda-transactions-header {
@@ -62,6 +75,9 @@ export default {
         font-size: 1.6rem;
         line-height: 2.4rem;
         padding: 12px 0 8px;
+        color: rgba(255,255,255,.4);
+        border-bottom: 2px solid $color-background-line;
+        margin-bottom: 16px;
     }
 
     .panda-transactions-ticker {
@@ -72,6 +88,11 @@ export default {
 
         .panda-transaction {
             display: flex;
+            margin-bottom: 24px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             &.buy {
                 color: $color-font-buy;
@@ -80,6 +101,22 @@ export default {
             &.sell {
                 color: $color-font-sell;
             }
+        }
+    }
+
+    .tx-price,
+    .tx-amount,
+    .tx-value,
+    .tx-time,
+    .tx-transaction {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-weight: 600;
+
+        .tx-lower {
+            font-size: 12px;
+            font-weight: 500;
         }
     }
 

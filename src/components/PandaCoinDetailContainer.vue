@@ -33,7 +33,7 @@ export default {
     overflow-x: auto;
     min-width: 150px;
     border-radius: $border-radius-primary;
-    padding: 6px 16px;
+    padding: 3px 16px;
       -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 
