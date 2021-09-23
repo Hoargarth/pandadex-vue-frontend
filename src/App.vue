@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 0 69px 0;
   padding: 0 $padding-body-mobile;
   background-color: $color-background-main;
   font-family: $font-family-primary;

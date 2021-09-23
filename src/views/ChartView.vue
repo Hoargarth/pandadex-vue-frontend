@@ -17,6 +17,10 @@
           <panda-button href="" title="">{{ $t('sidebarActions.buyButton') }}</panda-button>
         </div>
         <panda-promoted v-bind:promotions="promotions" />
+        <panda-tabs>
+          <panda-tab title="Watch List">Tab 1</panda-tab>
+          <panda-tab title="Wallet">Tab 2</panda-tab>
+        </panda-tabs>
       </div>
     </div>
   </div>
@@ -30,6 +34,8 @@ import PandaTransactions from '../components/PandaTransactions.vue';
 import PandaSearch from '../components/PandaSearch.vue';
 import PandaButton from '../components/PandaButton.vue';
 import PandaPromoted from '../components/PandaPromoted.vue';
+import PandaTab from '../components/PandaTab/PandaTab.vue';
+import PandaTabs from '../components/PandaTab/PandaTabs.vue';
 
 export default {
   name: 'ChartView',
@@ -41,6 +47,8 @@ export default {
     PandaSearch,
     PandaButton,
     PandaPromoted,
+    PandaTab,
+    PandaTabs,
   },
   data() {
     return {
