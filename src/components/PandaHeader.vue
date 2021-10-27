@@ -8,17 +8,19 @@
       {{ $t('header.burningPanda') }}
     </panda-button>
     <h1>{{ $t('header.pandaDex') }}<i>{{ $t('header.beta') }}</i></h1>
-    <panda-button href="" title="" disabled>{{ $t('header.walletConnect') }}</panda-button>
+    <panda-button-wallet-connect>{{ $t('header.walletConnect') }}</panda-button-wallet-connect>
   </div>
 </template>
 
 <script>
 import PandaButton from './PandaButton.vue';
+import PandaButtonWalletConnect from './PandaButtonWalletConnect.vue';
 
 export default {
   name: 'PandaHeader',
   components: {
     PandaButton,
+    PandaButtonWalletConnect,
   },
   props: {
   },

@@ -1,7 +1,6 @@
 <template>
-  <a class="panda-button"
-    v-bind:href="href"
-    v-bind:title="title"
+  <div>
+    <button class="panda-button"
     v-bind:class="[
       type,
       disabled ? 'disabled' : '',
@@ -13,15 +12,33 @@
       v-bind:style="{ backgroundImage: 'url(' + icon + ')' }">
     </i>
     <slot />
-  </a>
+  </button>
+
+  <vue-metamask
+    v-if="openMetamask"
+    userMessage="msg"
+    @onComplete="onComplete"
+  >
+  </vue-metamask>
+
+  </div>
 </template>
 
 <script>
+import VueMetamask from 'vue-metamask';
+
 export default {
-  name: 'PandaButton',
+  components: {
+    VueMetamask,
+  },
+  name: 'PandaButtonWalletConnect',
+  data() {
+    return {
+      msg: 'This is demo net work',
+      openMetamask: false,
+    };
+  },
   props: {
-    href: String,
-    title: String,
     type: {
       type: String,
       default: 'primary', // primary | secondary | borderless
@@ -34,6 +51,11 @@ export default {
       if (this.disabled) {
         event.preventDefault();
       }
+
+      this.openMetamask = true;
+    },
+    onComplete(data) {
+      console.log('data:', data);
     },
   },
 };
@@ -49,6 +71,7 @@ export default {
     border: 1px solid transparent;
     transition: all .2s ease-in-out;
     width: fit-content;
+    cursor: pointer;
 
     &,
     &:visited {
@@ -66,9 +89,7 @@ export default {
       padding: 8px 24px;
 
       &:not(.disabled) {
-        &:hover,
-        &:focus,
-        &:active {
+        &:hover {
           background-color: $color-button-primary-background-hover;
           color: $color-button-primary-font-hover;
           border-color: $color-button-primary-border-hover;
@@ -85,9 +106,7 @@ export default {
       padding: 8px 14px;
 
       &:not(.disabled) {
-        &:hover,
-        &:focus,
-        &:active {
+        &:hover {
           background-color: $color-button-secondary-background-hover;
           color: $color-button-secondary-font-hover;
           border-color: $color-button-secondary-border-hover;
