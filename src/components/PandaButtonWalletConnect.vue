@@ -70,8 +70,12 @@ export default {
     align-items: center;
     border: 1px solid transparent;
     transition: all .2s ease-in-out;
-    width: fit-content;
+    width: 100%;
     cursor: pointer;
+
+    @media all and (min-width: 768px) {
+      width: fit-content;
+    }
 
     &,
     &:visited {

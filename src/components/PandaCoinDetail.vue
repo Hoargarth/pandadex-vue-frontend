@@ -37,7 +37,11 @@ export default {
         white-space: nowrap;
 
         &:not(:first-child) {
-            margin-left: 40px;
+            margin-left: 30px;
+
+            @media all and (min-width: 768px) {
+                margin-left: 40px;
+            }
         }
 
         &.icon-detail,

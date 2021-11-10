@@ -29,5 +29,6 @@ export default {
         border-top-right-radius: $border-radius-primary;
         border-bottom-left-radius: $border-radius-primary;
         border-bottom-right-radius: $border-radius-primary;
+        min-height: 260px;
     }
 </style>

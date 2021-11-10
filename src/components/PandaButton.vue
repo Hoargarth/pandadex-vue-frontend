@@ -24,7 +24,7 @@ export default {
     title: String,
     type: {
       type: String,
-      default: 'primary', // primary | secondary | borderless
+      default: 'primary', // primary | secondary | borderless | mobile
     },
     disabled: Boolean,
     icon: String,
@@ -93,6 +93,13 @@ export default {
           border-color: $color-button-secondary-border-hover;
         }
       }
+    }
+
+    &.mobile {
+      opacity: .5;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      margin: 32px auto 0;
     }
 
     &.disabled {

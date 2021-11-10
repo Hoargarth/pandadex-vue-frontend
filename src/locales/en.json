@@ -3,7 +3,10 @@
         "burningPanda": "Burning Panda",
         "pandaDex": "Pandadex",
         "beta": "Beta",
-        "walletConnect": "Connect Wallet"
+        "walletConnect": "Connect Wallet",
+        "menu": "Menu",
+        "priceBot": "Price Bot",
+        "telegram": "Telegram"
     },
     "transactions": {
         "price": "Price",

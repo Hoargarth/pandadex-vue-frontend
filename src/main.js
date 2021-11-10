@@ -22,4 +22,17 @@ new Vue({
   router,
   store,
   render: (h) => h(App),
+  data: {
+    isMobile: false,
+  },
+  methods: {
+    detectMobile() {
+      const mobileMedia = window.matchMedia('(max-width: 1405px)');
+      if (mobileMedia.matches) {
+        this.isMobile = true;
+      } else {
+        this.isMobile = false;
+      }
+    },
+  },
 }).$mount('#app');
